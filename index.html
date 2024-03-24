@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp</title>
+    <!-- Bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Flaticon cdn -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+</head>
+<body>
+    <div class="container">
+        <div class="app-container shadow-sm">
+            <div class="search-box d-flex align-items-center">
+                <input type="text" placeholder="Search By City" id="searchBox" class="w-100">
+                <button onclick="checkWeather()"><i class="fi fi-rr-search d-flex"></i></button>
+            </div>
+            <div class="d-flex align-items-center justify-content-center fs-5 fw-bold mb-3">
+                <i class="fi fi-rr-marker me-2 d-flex"></i>
+                <span id="cityName">
+                    Ranchi
+                </span>
+            </div>
+            <div class="basic-weather-info d-flex align-items-baseline justify-content-center mb-4">
+                <div class="weather-icon">
+                    <img id="weatherIcon" src="images/shower-rain.svg" alt="weatherIcon">
+                </div>
+                <div class="text-start">
+                    <div class="weather-temp" id="weatherTemp">
+                        25ºC
+                    </div>
+                    <div class="feelslike">
+                        Feels Like <span id="feelsLike" class="text-dark">25ºC</span>
+                    </div>
+                </div>
+            </div>
+            <div class="more-info-cont">
+                <div class="container-fluid">
+                    <div class="row g-2 g-sm-3">
+                        <div class="col-12">
+                            <div class="weather-cond d-flex align-items-center justify-content-between">
+                                <dik id="weatherCond">Shower Rain</dik>
+                                <div id="minMax">24 / 54</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="item">
+                                <div class="d-flex align-items-center cfw-6">
+                                    <i class="fi fi-rr-humidity d-flex me-2"></i>
+                                    <span>Humidity</span>
+                                </div>
+                                <div class="weather-d" id="humidity">Loading..</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="item">
+                                <div class="d-flex align-items-center cfw-6">
+                                    <i class="fi fi-rr-dashboard d-flex me-2"></i>
+                                    <span>Pressure</span>
+                                </div>
+                                <div class="weather-d" id="pressure">Loading..</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="item">
+                                <div class="d-flex align-items-center cfw-6">
+                                    <i class="fi fi-rr-eye d-flex me-2"></i>
+                                    <span>Visibility</span>
+                                </div>
+                                <div class="weather-d" id="visibility">Loading..</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="item">
+                                <div class="d-flex align-items-center cfw-6">
+                                    <i class="fi fi-rr-smoke d-flex me-2"></i>
+                                    <span>Air Quality</span>
+                                </div>
+                                <div class="weather-d" id="airQuality">Loading..</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="item">
+                                <div class="d-flex align-items-center cfw-6">
+                                    <i class="fi fi-rr-wind d-flex me-2"></i>
+                                    <span>
+                                        Wind
+                                    </span>
+                                </div>
+                                <div class="weather-d" id="windSpeed">Loading..</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="item">
+                                <div class="d-flex align-items-center cfw-6">
+                                    <i class="fi fi-rr-windsock d-flex me-2"></i>
+                                    <span>
+                                    Wind Dir..
+                                    </span>
+                                </div>
+                                <div class="weather-d" id="windDir">Loading..</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
