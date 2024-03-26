@@ -1,12 +1,12 @@
-function checkWeather() {
+async function checkWeather() {
     const cityName = document.querySelector('#searchBox').value;
     if(cityName == '') {
         alert('Please enter your city name!');
     }else {
-        weatherApp(cityName);
+        await weatherApp(cityName);
+        document.querySelector('#searchBox').value = '';
     }
 }
-
 
 async function weatherApp(cityname) {
     const apiKey = '31a809b61f8f08b2cd8decb7799b60e3';
@@ -16,6 +16,7 @@ async function weatherApp(cityname) {
     try{
         const response = await fetch(url);
         const data = await response.json();
+        // console.log(data);
         if (data.cod === '404') {
             alert('City not found!');
         } else {
@@ -40,7 +41,7 @@ async function weatherApp(cityname) {
         console.log('Error fetching data : ', error);
     }
 }
-weatherApp('Ranchi');
+weatherApp('Tokyo');
 
 
 function setweatherData(location, icon, temp, realfeel, cond, minmax, humidity, pressure, visibility, airQty, windspeed, winddir) {
@@ -68,7 +69,7 @@ function setweatherData(location, icon, temp, realfeel, cond, minmax, humidity, 
     else if(iconCode == '03' || iconCode == '04') {
         imagename = 'broken-clouds';
     }
-    else if(iconCode == '10') {
+    else if(iconCode == '10' || iconCode == '09') {
         imagename = 'shower-rain';
     }
     else if(iconCode == '11') {
